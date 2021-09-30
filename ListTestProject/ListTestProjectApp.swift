@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ListTestProjectApp: App {
+    
+    @StateObject var todoManager = TodoListManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TodoListView(todoManager: todoManager)
         }
     }
 }

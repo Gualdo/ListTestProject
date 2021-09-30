@@ -19,15 +19,10 @@ class ListTestProjectTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let manager = TodoListManager.emptyState()
+        XCTAssertTrue(manager.items.count == 0, "Should start with an empty list of todo's")
+        
+        manager.addItem()
+        XCTAssertTrue(manager.items.count == 1, "Should have one todo after adding")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
